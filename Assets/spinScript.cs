@@ -11,8 +11,8 @@ public class spinScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update ()
+    void FixedUpdate ()
     {
-        transform.Rotate (0,0,120*Time.deltaTime); //rotates 50 degrees per second around z axis
+        transform.Rotate (0,0,120*Time.deltaTime);
     }
 }
