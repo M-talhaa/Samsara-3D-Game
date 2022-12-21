@@ -31,5 +31,13 @@ public class MainCharacterController : MonoBehaviour
             animator.SetBool("Right", false);
         }
 
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            animator.SetBool("Left", true);
+        }
+        else
+        {
+            animator.SetBool("Left", false);
+        }
     }
 }
