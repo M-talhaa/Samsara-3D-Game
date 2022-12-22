@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class MainCharacterController : MonoBehaviour
 {
     public Animator animator;
-    public float speed = 12.0f;
+    public float speed = 0.0f;
     public GameObject self;
     public int coinCount = 0;
     private static MainCharacterController _instance;

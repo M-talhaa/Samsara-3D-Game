@@ -3,7 +3,7 @@ using System.Collections;
 
 public class example : MonoBehaviour
 {
-    public float speed = 2.0f;
+    public float speed = 0.0f;
     public GameObject self;
     // Start is called before the first frame update
     void Start()
