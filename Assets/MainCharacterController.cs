@@ -11,7 +11,7 @@ public class MainCharacterController : MonoBehaviour
     public GameObject self;
     public int coinCount = 0;
     private static MainCharacterController _instance;
-    private int healthPoints = 5;
+    private int healthPoints = 20;
     public HealthBar healthBar;
     public RuppeeCounter ruppeeUI;
 
