@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,10 +8,39 @@ public class MainCharacterController : MonoBehaviour
     public Animator animator;
     public float speed = 2.0f;
     public GameObject self;
+    public int coinCount = 0;
+    private static MainCharacterController _instance;
+
+    public static MainCharacterController Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                Debug.LogError("Player is null");
+            }
+            return _instance;
+        }
+    }
+
+    private void Awake()
+    {
+        _instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+
+    public void addCoin()
+    {
+        coinCount++;
+    }
+    public int getCoinCount()
+    {
+        return coinCount;
     }
 
     // Update is called once per frame
