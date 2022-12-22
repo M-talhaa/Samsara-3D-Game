@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainCharacterController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class MainCharacterController : MonoBehaviour
     public int coinCount = 0;
     private static MainCharacterController _instance;
     private int healthPoints = 5;
+    public HealthBar healthBar;
+    public RuppeeCounter ruppeeUI;
 
     public static MainCharacterController Instance
     {
@@ -23,7 +26,7 @@ public class MainCharacterController : MonoBehaviour
             return _instance;
         }
     }
-    public HealthBar healthBar;
+
     private void Awake()
     {
         _instance = this;
@@ -34,11 +37,13 @@ public class MainCharacterController : MonoBehaviour
     {
         healthBar.SetMaxHealth(healthPoints);
         healthBar.SetHealth(healthPoints);
+        ruppeeUI.SetRuppeeCount(0);
     }
 
     public void addCoin()
     {
         coinCount++;
+        ruppeeUI.SetRuppeeCount(coinCount);
     }
     public int getCoinCount()
     {
