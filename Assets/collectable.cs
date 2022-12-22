@@ -16,12 +16,21 @@ public class collectable : MonoBehaviour
         if (other.tag == "Player")
         {
             MainCharacterController.Instance.addCoin();
-           //aintance.AddCoins();
+            // adding health
             Debug.Log("You got a coin");
             Debug.Log(MainCharacterController.Instance.getCoinCount());
+
+            // reducing health
+            MainCharacterController.Instance.reducehealth(1);
+            Debug.Log("Reduce Health");
+            Debug.Log(MainCharacterController.Instance.getHealth());
+
+
             Destroy(this.gameObject);
         }
     }
+
+
 
     // Update is called once per frame
     void Update()

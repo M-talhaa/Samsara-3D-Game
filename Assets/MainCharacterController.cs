@@ -6,10 +6,11 @@ using UnityEngine;
 public class MainCharacterController : MonoBehaviour
 {
     public Animator animator;
-    public float speed = 2.0f;
+    public float speed = 12.0f;
     public GameObject self;
     public int coinCount = 0;
     private static MainCharacterController _instance;
+    private int healthPoints = 5;
 
     public static MainCharacterController Instance
     {
@@ -22,7 +23,7 @@ public class MainCharacterController : MonoBehaviour
             return _instance;
         }
     }
-
+    public HealthBar healthBar;
     private void Awake()
     {
         _instance = this;
@@ -31,7 +32,8 @@ public class MainCharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        healthBar.SetMaxHealth(healthPoints);
+        healthBar.SetHealth(healthPoints);
     }
 
     public void addCoin()
@@ -41,6 +43,21 @@ public class MainCharacterController : MonoBehaviour
     public int getCoinCount()
     {
         return coinCount;
+    }
+
+    public void reducehealth(int damage)
+    {
+        healthPoints -= damage;
+        healthBar.SubtractHealth(damage);
+    }
+    public void increaseHealth(int toAdd)
+    {
+        healthPoints += toAdd;
+        healthBar.AddHealth(toAdd);
+    }
+    public int getHealth()
+    {
+        return healthPoints;
     }
 
     // Update is called once per frame
