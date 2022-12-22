@@ -1,39 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
-public class move : MonoBehaviour
+public class example : MonoBehaviour
 {
+    public float speed = 2.0f;
+    public GameObject self;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-	// Update is called once per frame
-	private float speed = 2.0f;
-	public GameObject character;
+    // Update is called once per frame
+    void Update()
+    {
+        void Start()
+        {
 
-	void Update()
-	{
+        }
 
-		if (Input.GetKey(KeyCode.LeftArrow))
-		{
-			transform.position += Vector3.right * speed * Time.deltaTime;
-		}
-		if (Input.GetKey(KeyCode.RightArrow))
-		{
-			transform.position += Vector3.left * speed * Time.deltaTime;
-		}
-		if (Input.GetKey(KeyCode.DownArrow))
-		{
-			transform.position += Vector3.forward * speed * Time.deltaTime;
-		}
-		if (Input.GetKey(KeyCode.UpArrow))
-		{
-			transform.position += Vector3.back * speed * Time.deltaTime;
-		}
-	}
+        // Update is called once per frame
+        void Update()
+        {
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                //animator.SetFloat("Moving", 0.5f);
+                self.transform.Translate(0f, 0f, 1f);
+            }
+            else
+            {
+                self.transform.Translate(0f, 0f, 0f);
+            }
+
+        }
+    }
 }
-
-

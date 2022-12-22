@@ -5,7 +5,8 @@ using UnityEngine;
 public class MainCharacterController : MonoBehaviour
 {
     public Animator animator;
-
+    public float speed = 2.0f;
+    public GameObject self;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +20,15 @@ public class MainCharacterController : MonoBehaviour
         {
             animator.SetFloat("Moving", 0.5f);
         }
-        else {
+        else
+        {
             animator.SetFloat("Moving", 0.0f);
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
             animator.SetBool("Right", true);
+            //transform.Rotate(Vector3.up, 2.0f);
         }
         else {
             animator.SetBool("Right", false);
